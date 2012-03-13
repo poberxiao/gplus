@@ -1,7 +1,7 @@
 </div>
 <?php flush(); ?>
 <footer>
-	&copy; <?php echo date("Y"); ?>&nbsp;<?php bloginfo('name'); ?> - <a href="http://wordpress.org/">WordPress</a> - <a href="http://www.welefen.com/gplus-1-1-version.html" title="gplus theme designed by welefen">gplus</a>
+	&copy; <?php echo date("Y"); ?>&nbsp;<?php bloginfo('name'); ?> - <a href="http://wordpress.org/">WordPress</a> - <a href="http://www.welefen.com/gplus-v1-3.html" title="gplus theme designed by welefen">gplus</a>
 </footer>
 <?php wp_footer();?>
 <?php $options = gplus_get_options();?>
