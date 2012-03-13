@@ -34,9 +34,11 @@
 		storage: typeof pjaxUseStorage == 'undefined' ? true : pjaxUseStorage,
 		titleSuffix: pjaxTitleSuffix,
 		filter: function(href){
-			if(href.indexOf('wp-content/') > -1 || href.indexOf('wp-admin/') > -1){
+			if(href.indexOf('wp-login.php')> -1 || href.indexOf('wp-content/') > -1 || href.indexOf('wp-admin/') > -1 || href.indexOf('/lab/') > -1){
 				return true;
 			}
 		}
 	})
+
+
 })();

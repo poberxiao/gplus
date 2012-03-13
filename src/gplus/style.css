@@ -388,3 +388,16 @@ summary p, .detail p{
 	display: none;
 	}
 pre{font-size:11px;line-height:1}
+li.cat-item{
+	list-style-type:circle;
+	margin-left:20px;
+}
+.recent-comment-item{
+	max-height:44px;
+	line-height:22px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	-webkit-text-overflow:ellipsis;
+	-moz-text-overflow:ellipsis;
+	white-space:nowrap;
+}

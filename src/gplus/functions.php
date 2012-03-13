@@ -10,7 +10,14 @@ function gplus_widgets_init() {
 		'after_title' => '</h3>'
 	));
 }
+//add recent comments widget
+function gplus_add_recent_comments(){
+	include_once "widget/recent_comments.php";
+	register_widget("Gplus_Recent_Comments_Widget");
+}
 add_action( 'widgets_init', 'gplus_widgets_init' );
+add_action( 'widgets_init', 'gplus_add_recent_comments' );
+
 
 $GLOBALS['comments_li_class'] = 'odd';
 
@@ -19,12 +26,13 @@ function gplus_comment($comment, $args, $depth) {
 ?>
 <li class="clearfix <?php echo $GLOBALS['comments_li_class'];?>">
 	<a class="portrait" name="comment-<?php comment_ID();?>"><?php echo get_avatar($comment,$size='48',$default='' ); ?></a>
-	<span style="display:block;"><?php comment_author_link() ?>&nbsp;&nbsp;<?php printf(__('%1$s at %2$s', 'gplus'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('[Edit]'),' ','') ?></span>
+	<span style="display:block;"><?php comment_author_link() ?>&nbsp;&nbsp;<?php printf(__('%1$s at %2$s', 'gplus'), get_comment_date(),  get_comment_time()) ?></a>
+		<a onclick="replyComment(<?php comment_ID();?>, '<?php echo get_comment_author();?>')" href="#commentForm">&nbsp;<?php echo __("Reply", "gplus"); ?></a>
+		<?php edit_comment_link(__('[Edit]'),' ','') ?></span>
 	<?php if ($comment->comment_approved == '0') : ?>
 	<em class="approved"><?php _e('Your comment is awaiting moderation.', 'gplus') ?></em>
 	<?php endif; ?>
-	<?php comment_text() ?>
-	
+	<p id="commentText<?php comment_ID();?>"><?php echo get_comment_text(); ?></p>
 	<?php 
 		if ($GLOBALS['comments_li_class'] === 'odd'){
 			$GLOBALS['comments_li_class'] = 'even';
@@ -244,7 +252,7 @@ function gplus_is_ie6(){
 	return !!(strpos($_SERVER["HTTP_USER_AGENT"], "MSIE 6") !== false);
 }
 function gplus_version(){
-	return '1.2';
+	return '1.3';
 }
 /**
  * 

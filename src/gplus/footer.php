@@ -29,5 +29,18 @@
 <?php echo gplus_stripvalue($options['tongji_js_value']);?>
 <?php endif;?>
 <?php endif;?>
+<script>
+(function(){
+var oldReplyTitle='',$ = function(el){return document.getElementById(el)};
+window.replyComment = function(id, author){
+	if(!oldReplyTitle){oldReplyTitle = $('reply-title').innerHTML;}
+	$('comment_parent').value = id;
+	var comment = $('commentText'+id).innerHTML,
+	 	cancel = '&nbsp;<a onclick="cancelReplyComment();return false" style="cursor:pointer">取消回复</a>',
+	 	text = '回复 '+ author+ " 的评论: "+ comment + cancel;
+	$('reply-title').innerHTML = text;
+};window.cancelReplyComment=function(){$('comment_parent').value = 0;$('reply-title').innerHTML = oldReplyTitle;}
+})()
+</script>
 </body>
 </html>
