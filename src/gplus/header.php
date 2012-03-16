@@ -1,3 +1,8 @@
+<?php 
+ob_start();
+ob_end_flush(); 
+ob_implicit_flush(1); 
+?>
 <?php $options = gplus_get_options();?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> <?php if ($options['use_manifest']):?>manifest="<?php echo home_url();?>?manifest=welefen"<?php endif;?>>
@@ -15,7 +20,7 @@
 	<meta name="description" content="<?php echo $kd[1];?>" />
 	<?php endif;?>
 	<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=<?php echo gplus_version();?>" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php if (gplus_is_ie()):?>
 	<!--[if IE]>
