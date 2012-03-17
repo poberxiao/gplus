@@ -23,11 +23,14 @@ $GLOBALS['comments_li_class'] = 'odd';
 
 function gplus_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment;
+   $options = gplus_get_options();
 ?>
 <li class="clearfix <?php echo $GLOBALS['comments_li_class'];?>">
 	<a class="portrait" name="comment-<?php comment_ID();?>"><?php echo get_avatar($comment,$size='48',$default='' ); ?></a>
 	<span style="display:block;"><?php comment_author_link() ?>&nbsp;&nbsp;<?php printf(__('%1$s at %2$s', 'gplus'), get_comment_date(),  get_comment_time()) ?></a>
+		<?php if( $options['show_reply']):?>
 		<a onclick="replyComment(<?php comment_ID();?>, '<?php echo get_comment_author();?>')" href="#commentForm">&nbsp;<?php echo __("Reply", "gplus"); ?></a>
+		<?php endif;?>
 		<?php edit_comment_link(__('[Edit]'),' ','') ?></span>
 	<?php if ($comment->comment_approved == '0') : ?>
 	<em class="approved"><?php _e('Your comment is awaiting moderation.', 'gplus') ?></em>
@@ -89,6 +92,18 @@ $gplus_items = array (
 		'type' => 'checkbox'
 	),
 	array(
+		'id' => 'show_reply',
+		'name' => __('show reply', 'gplus'),
+		'desc' => __('show reply button in comment list', 'gplus'),
+		'type' => 'checkbox'
+	),
+	array(
+		'id' => 'use_weibo_comment',
+		'name' => __('use weibo comment', 'gplus'),
+		'desc' => __('use weibo comment replace default comment?', 'gplus'),
+		'type' => 'checkbox'
+	),
+	array(
 		'id' => 'js_framework',
 		'name' => __('js framework', 'gplus'),
 		'desc' => __('js framework, jquery or qwrap or kissy', 'gplus'),
@@ -112,12 +127,12 @@ $gplus_items = array (
 		'desc' => __('use storage for cache content for next request', 'gplus'),
 		'type' => 'checkbox'
 	),
-	array(
+	/*array(
 		'id' => 'show_fx',
 		'name' => __('show fx?', 'gplus'),
 		'desc' => __('animate for show content ', 'gplus'),
 		'type' => 'radio'
-	),
+	),*/
 	/*array(
 		'id' => 'use_manifest',
 		'name' => __('use manifest', 'gplus'),

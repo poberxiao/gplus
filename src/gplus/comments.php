@@ -12,6 +12,19 @@ if ( post_password_required() ) { ?>
 	return;
 }
 ?>
+<?php 
+$options = gplus_get_options();
+if($options['use_weibo_comment']){
+?>
+<h2 class="title comments-title ellipsis">Comments for <?php the_title();?></h2>
+<a name="comments"></a>
+<div name="commentForm" style="padding:10px 0;">
+<iframe width="100%" height="500"  frameborder="0" scrolling="no" src="http://widget.weibo.com/distribution/comments.php?language=zh_cn&width=0&height=500&skin=1&dpc=1&url=<?php the_permalink() ?>&titlebar=1&border=1&appkey=&colordiy=0&dpc=1"></iframe>
+</div>
+<?php
+	return true;
+}
+?>
 <!-- You can start editing here. -->
 
 	<?php if ( have_comments() ) { ?>

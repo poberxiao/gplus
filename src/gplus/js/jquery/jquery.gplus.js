@@ -72,6 +72,8 @@ $(function(){
 		});
 		showLine();
 		typeof pjaxCallback != 'undefined' && pjaxCallback && pjaxCallback();
+
+		removeStorageCache();
 	});
 
 	$.pjax({
@@ -87,5 +89,12 @@ $(function(){
 			}
 		}
 	});
-	
+	function removeStorageCache(){
+		//remove current href cache when a comment added.
+		$('#commentform').submit(function(){
+			var href = location.href.replace(/\/comment\-page.*?/, '');
+			$.pjax.util.removeCache(href);
+		})
+	}
+	removeStorageCache();
 });

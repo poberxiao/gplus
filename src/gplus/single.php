@@ -24,7 +24,9 @@
 			<div class="md"><?php the_time('m-d'); ?></div>
 			<div class="y"><?php the_time('Y'); ?></div>
 		</div>
+		<?php if(!$options['use_weibo_comment']): ?>
 		<div>-- EOF -- 看完了，<a href="#commentForm">留个脚印~~</a> ^_^</div>
+	<?php endif; ?>
 	</article>
 	<?php comments_template( '', true ); ?>
 	

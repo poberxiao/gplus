@@ -1,15 +1,14 @@
 (function(){
 	var endPjaxTimer = 0;
-	var content = baidu.g('content');
-	baidu.event.on(content, 'pjax.start', function(cache){
+	W('#content').on('pjax.start', function(cache){
 		W('.loading').show();
 		endPjaxTimer = setTimeout(function(){
 			endPjaxTimer = 0;
-			baidu.event.fire(content, 'pjax.end');
+			W('#content').fire('pjax.end');
 		}, 3000);
 	});
-	var li = baidu.dom.query('header nav li');
-	baidu.event.on(content, 'pjax.end', function(cache){
+	var li = W('header nav li');
+	W('#content').on('pjax.end', function(cache){
 		if(endPjaxTimer){
 			clearTimeout(endPjaxTimer);
 			endPjaxTimer = 0;
@@ -26,18 +25,29 @@
 			}
 		});
 		typeof pjaxCallback != 'undefined' && pjaxCallback && pjaxCallback();
+
+		removeStorageCache();
 	});
-	baidu.pjax({
-		selector: 'a',
+	QW.pjax({
+		selector: 'a[href^="'+pjaxHomeUrl+'"]',
 		container: '#content',
 		show: typeof pjaxFx == 'undefined' ? '' : pjaxFx,
 		cache: typeof pjaxCacheTime == 'undefined' ? true : pjaxCacheTime,
 		storage: typeof pjaxUseStorage == 'undefined' ? true : pjaxUseStorage,
 		titleSuffix: pjaxTitleSuffix,
 		filter: function(href){
-			if(href.indexOf('wp-login.php')> -1 || href.indexOf(pjaxHomeUrl) !== 0 || href.indexOf('wp-content/') > -1 || href.indexOf('wp-admin/') > -1){
+			if(href.indexOf('wp-login.php')> -1 || href.indexOf('wp-content/') > -1 || href.indexOf('wp-admin/') > -1 || href.indexOf('/lab/') > -1){
 				return true;
 			}
 		}
 	})
+	function removeStorageCache(){
+		//remove current href cache when a comment added.
+		W('#commentform').submit(function(){
+			var href = location.href.replace(/\/comment\-page.*/, '');
+			QW.pjax.util.removeCache(href);
+		})
+	}
+
+	removeStorageCache();
 })();

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-13 15:03+0800\n"
-"PO-Revision-Date: 2012-03-13 15:04+0800\n"
+"POT-Creation-Date: 2012-03-17 13:15+0800\n"
+"PO-Revision-Date: 2012-03-17 13:17+0800\n"
 "Last-Translator: welefen <welefen@gmail.com>\n"
 "Language-Team: zwwooooo <http://zww.me/>\n"
 "MIME-Version: 1.0\n"
@@ -20,40 +20,40 @@ msgstr ""
 msgid "This post is password protected. Enter the password to view comments."
 msgstr "这是受保护的文章，输入密码才能查看评论。"
 
-#: comments.php:29
+#: comments.php:42
 msgid "Comments are closed."
 msgstr "评论关闭。"
 
-#: comments.php:48
+#: comments.php:61
 msgid "NAME"
 msgstr "昵称"
 
-#: comments.php:50
+#: comments.php:63
 msgid "EMAIL"
 msgstr "邮箱"
 
-#: comments.php:52
+#: comments.php:65
 msgid "Website URL"
 msgstr "网址"
 
-#: comments.php:59
+#: comments.php:72
 msgid "Leave a Comment"
 msgstr "发表评论"
 
-#: comments.php:60
+#: comments.php:73
 #, php-format
 msgid "Reply to %s &not;<br />"
 msgstr "回复给 %s &not;<br />"
 
-#: comments.php:61
+#: comments.php:74
 msgid "<small>Cancel reply</small>"
 msgstr "<small>取消回复</small>"
 
-#: comments.php:62
+#: comments.php:75
 msgid "SUBMIT"
 msgstr "提交"
 
-#: comments.php:76
+#: comments.php:89
 msgid "Trackbacks and Pingbacks:"
 msgstr "Trackbacks and Pingbacks:"
 
@@ -82,113 +82,121 @@ msgstr "[编辑]"
 msgid "Your comment is awaiting moderation."
 msgstr "您的评论正在等待审核。"
 
-#: functions.php:60
+#: functions.php:59
 msgid "Primary Navigation"
 msgstr "主要导航"
 
-#: functions.php:70
+#: functions.php:69
 msgid "logo image URL"
 msgstr "logo图片地址"
 
-#: functions.php:71
+#: functions.php:70
 msgid "logo image url.(with http://), height is 28px, max width is 140px"
 msgstr "logo图片地址，高度为28px，最大宽度为140px"
 
-#: functions.php:76
+#: functions.php:75
 msgid "404 image URL"
 msgstr "404图片地址"
 
-#: functions.php:77
+#: functions.php:76
 msgid "404 page image URL. max width is 700px"
 msgstr "404图片地址，最大宽度为700px"
 
-#: functions.php:82
+#: functions.php:81
 msgid "header not fixed"
 msgstr "不固定顶部？"
 
-#: functions.php:83
+#: functions.php:82
 msgid "header not fixed?"
 msgstr "顶部(header)不固定？IE6由于不支持固定模式，所以都是不固定的"
 
-#: functions.php:88
+#: functions.php:87
 msgid "show author"
 msgstr "显示文章作者"
 
-#: functions.php:89
+#: functions.php:88
 msgid "display author in article list?"
 msgstr "文章列表页和详细页是否显示当前文章的作者？"
 
+#: functions.php:93
+msgid "show reply"
+msgstr "显示回复按钮"
+
 #: functions.php:94
+msgid "show reply button in comment list"
+msgstr "评论列表里显示回复按钮"
+
+#: functions.php:99
+msgid "use weibo comment"
+msgstr "使用新浪微博评论"
+
+#: functions.php:100
+msgid "use weibo comment replace default comment?"
+msgstr "使用新浪微博的评论框？"
+
+#: functions.php:105
 msgid "js framework"
 msgstr "JS框架"
 
-#: functions.php:95
+#: functions.php:106
 msgid "js framework, jquery or qwrap or kissy"
 msgstr "使用的JS框架，目前有jquery,qwrap和kissy"
 
-#: functions.php:100
+#: functions.php:111
 msgid "not use ajax"
 msgstr "不使用ajax？"
 
-#: functions.php:101
+#: functions.php:112
 msgid "if not use ajax, cache,storage and animate options is not used"
 msgstr "如果不使用ajax，下面的缓存、本地存储和动画选项将无效"
 
-#: functions.php:106
+#: functions.php:117
 msgid "cache time"
 msgstr "缓存时间"
 
-#: functions.php:107
+#: functions.php:118
 msgid "cache time. default is 1 day. 24 *3600 seconds. 0 is not cache"
 msgstr "缓存时间，默认为1天。单位为秒，0为不缓存"
 
-#: functions.php:112
+#: functions.php:123
 msgid "not use storage?"
 msgstr "不使用本地存储？"
 
-#: functions.php:113
+#: functions.php:124
 msgid "use storage for cache content for next request"
 msgstr "使用本地存储可以在下次访问的时候直接使用缓存"
 
-#: functions.php:118
-msgid "show fx?"
-msgstr "展现动画"
-
-#: functions.php:119
-msgid "animate for show content "
-msgstr "内容展现动画"
-
-#: functions.php:137
+#: functions.php:148
 msgid "callback function"
 msgstr "回调函数"
 
-#: functions.php:138
+#: functions.php:149
 msgid "callback function. such as SyntaxHighlighter.highlight()"
 msgstr "使用了ajax后的回调函数，如： 执行语法高亮"
 
-#: functions.php:144
+#: functions.php:155
 msgid "analytic js content"
 msgstr "统计JS代码"
 
-#: functions.php:145
+#: functions.php:156
 msgid "analytic js content. such as baidu tongji, google analytics"
 msgstr "统计JS代码。比如：使用百度统计、google统计"
 
-#: functions.php:167
-#: functions.php:168
+#: functions.php:178
+#: functions.php:179
 msgid "Theme Options"
 msgstr "主题设置"
 
-#: functions.php:183
+#: functions.php:194
 #, php-format
 msgid "%1$s Theme Options"
 msgstr "%1$s 主题设置"
 
-#: functions.php:185
+#: functions.php:196
 msgid "Options saved"
 msgstr "设置已保存"
 
-#: functions.php:220
+#: functions.php:231
 msgid "Save Options"
 msgstr "保存设置"
 
@@ -288,7 +296,7 @@ msgstr "&laquo; 上一页"
 msgid "Next page &raquo;"
 msgstr "下一页 &raquo;"
 
-#: header.php:43
+#: header.php:48
 msgid "Home"
 msgstr "首页"
 
@@ -333,6 +341,12 @@ msgstr "评论: "
 #: widget/recent_comments.php:25
 msgid "Recent Comments"
 msgstr "最新评论"
+
+#~ msgid "show fx?"
+#~ msgstr "展现动画"
+
+#~ msgid "animate for show content "
+#~ msgstr "内容展现动画"
 
 #~ msgid "use manifest"
 #~ msgstr "使用manifest加速"
@@ -456,9 +470,6 @@ msgstr "最新评论"
 
 #~ msgid "Leave a comment"
 #~ msgstr "发表评论"
-
-#~ msgid "Go to comments"
-#~ msgstr "查看评论"
 
 #~ msgid "SEARCH"
 #~ msgstr "搜索"

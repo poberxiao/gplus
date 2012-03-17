@@ -27,6 +27,8 @@ KISSY.use("dom,sizzle", function(S,DOM){
 			}
 		});
 		typeof pjaxCallback != 'undefined' && pjaxCallback && pjaxCallback();
+
+		removeStorageCache();
 	});
 	S.pjax({
 		selector: 'a',
@@ -41,4 +43,14 @@ KISSY.use("dom,sizzle", function(S,DOM){
 			}
 		}
 	})
+	//remove current href cache when a comment added.
+	function removeStorageCache(){
+		if(S.one('#commentform').length){
+			S.Event.on('#commentform', 'submit',function(){
+				var href = location.href.replace(/\/comment\-page.*/, '');
+				S.pjax.util.removeCache(href);
+			})
+		}
+	}
+	removeStorageCache();
 })
