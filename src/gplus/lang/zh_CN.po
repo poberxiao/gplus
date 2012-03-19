@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-17 13:15+0800\n"
-"PO-Revision-Date: 2012-03-17 13:17+0800\n"
+"POT-Creation-Date: 2012-03-18 22:00+0800\n"
+"PO-Revision-Date: 2012-03-18 22:00+0800\n"
 "Last-Translator: welefen <welefen@gmail.com>\n"
 "Language-Team: zwwooooo <http://zww.me/>\n"
 "MIME-Version: 1.0\n"
@@ -65,138 +65,138 @@ msgstr "主小工具区域"
 msgid "The primary widget area"
 msgstr "全部页面显示的小工具区域"
 
-#: functions.php:29
+#: functions.php:30
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s 在 %2$s"
 
-#: functions.php:30
+#: functions.php:32
 msgid "Reply"
 msgstr "回复"
 
-#: functions.php:31
+#: functions.php:34
 msgid "[Edit]"
 msgstr "[编辑]"
 
-#: functions.php:33
+#: functions.php:36
 msgid "Your comment is awaiting moderation."
 msgstr "您的评论正在等待审核。"
 
-#: functions.php:59
+#: functions.php:62
 msgid "Primary Navigation"
 msgstr "主要导航"
 
-#: functions.php:69
+#: functions.php:72
 msgid "logo image URL"
 msgstr "logo图片地址"
 
-#: functions.php:70
+#: functions.php:73
 msgid "logo image url.(with http://), height is 28px, max width is 140px"
 msgstr "logo图片地址，高度为28px，最大宽度为140px"
 
-#: functions.php:75
+#: functions.php:78
 msgid "404 image URL"
 msgstr "404图片地址"
 
-#: functions.php:76
+#: functions.php:79
 msgid "404 page image URL. max width is 700px"
 msgstr "404图片地址，最大宽度为700px"
 
-#: functions.php:81
+#: functions.php:84
 msgid "header not fixed"
 msgstr "不固定顶部？"
 
-#: functions.php:82
+#: functions.php:85
 msgid "header not fixed?"
 msgstr "顶部(header)不固定？IE6由于不支持固定模式，所以都是不固定的"
 
-#: functions.php:87
+#: functions.php:90
 msgid "show author"
 msgstr "显示文章作者"
 
-#: functions.php:88
+#: functions.php:91
 msgid "display author in article list?"
 msgstr "文章列表页和详细页是否显示当前文章的作者？"
 
-#: functions.php:93
+#: functions.php:96
 msgid "show reply"
 msgstr "显示回复按钮"
 
-#: functions.php:94
+#: functions.php:97
 msgid "show reply button in comment list"
 msgstr "评论列表里显示回复按钮"
 
-#: functions.php:99
-msgid "use weibo comment"
-msgstr "使用新浪微博评论"
+#: functions.php:102
+msgid "use vender comment"
+msgstr "使用第三方评论"
 
-#: functions.php:100
-msgid "use weibo comment replace default comment?"
-msgstr "使用新浪微博的评论框？"
+#: functions.php:103
+msgid "use vender comment replace default comment, such as youyan"
+msgstr "使用第三方的评论，比如：友言"
 
-#: functions.php:105
+#: functions.php:108
 msgid "js framework"
 msgstr "JS框架"
 
-#: functions.php:106
+#: functions.php:109
 msgid "js framework, jquery or qwrap or kissy"
 msgstr "使用的JS框架，目前有jquery,qwrap和kissy"
 
-#: functions.php:111
+#: functions.php:114
 msgid "not use ajax"
 msgstr "不使用ajax？"
 
-#: functions.php:112
+#: functions.php:115
 msgid "if not use ajax, cache,storage and animate options is not used"
 msgstr "如果不使用ajax，下面的缓存、本地存储和动画选项将无效"
 
-#: functions.php:117
+#: functions.php:120
 msgid "cache time"
 msgstr "缓存时间"
 
-#: functions.php:118
+#: functions.php:121
 msgid "cache time. default is 1 day. 24 *3600 seconds. 0 is not cache"
 msgstr "缓存时间，默认为1天。单位为秒，0为不缓存"
 
-#: functions.php:123
+#: functions.php:126
 msgid "not use storage?"
 msgstr "不使用本地存储？"
 
-#: functions.php:124
+#: functions.php:127
 msgid "use storage for cache content for next request"
 msgstr "使用本地存储可以在下次访问的时候直接使用缓存"
 
-#: functions.php:148
+#: functions.php:151
 msgid "callback function"
 msgstr "回调函数"
 
-#: functions.php:149
+#: functions.php:152
 msgid "callback function. such as SyntaxHighlighter.highlight()"
 msgstr "使用了ajax后的回调函数，如： 执行语法高亮"
 
-#: functions.php:155
+#: functions.php:158
 msgid "analytic js content"
 msgstr "统计JS代码"
 
-#: functions.php:156
+#: functions.php:159
 msgid "analytic js content. such as baidu tongji, google analytics"
 msgstr "统计JS代码。比如：使用百度统计、google统计"
 
-#: functions.php:178
-#: functions.php:179
+#: functions.php:181
+#: functions.php:182
 msgid "Theme Options"
 msgstr "主题设置"
 
-#: functions.php:194
+#: functions.php:197
 #, php-format
 msgid "%1$s Theme Options"
 msgstr "%1$s 主题设置"
 
-#: functions.php:196
+#: functions.php:199
 msgid "Options saved"
 msgstr "设置已保存"
 
-#: functions.php:231
+#: functions.php:234
 msgid "Save Options"
 msgstr "保存设置"
 

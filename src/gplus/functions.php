@@ -98,9 +98,9 @@ $gplus_items = array (
 		'type' => 'checkbox'
 	),
 	array(
-		'id' => 'use_weibo_comment',
-		'name' => __('use weibo comment', 'gplus'),
-		'desc' => __('use weibo comment replace default comment?', 'gplus'),
+		'id' => 'use_vender_comment',
+		'name' => __('use vender comment', 'gplus'),
+		'desc' => __('use vender comment replace default comment, such as youyan', 'gplus'),
 		'type' => 'checkbox'
 	),
 	array(
