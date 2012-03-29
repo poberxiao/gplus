@@ -50,7 +50,7 @@ class Gplus_Recent_Comments_Widget extends WP_Widget{
 			$comment_author = stripslashes($comment->comment_author);
 
 			$permalink = get_permalink($comment->ID) . '#comment-' . $comment->comment_ID;
-			echo ' <a href="'.$permalink.'">' . $comment_author . '</a>:' . $content;
+			echo ' <a href="'.$permalink.'">' . $comment_author . '</a>: ' . $content;
 			echo '</li>';
 		}
         echo '</ul>';

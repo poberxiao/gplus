@@ -38,14 +38,14 @@ KISSY.use("dom,sizzle", function(S,DOM){
 		storage: typeof pjaxUseStorage == 'undefined' ? true : pjaxUseStorage,
 		titleSuffix: pjaxTitleSuffix,
 		filter: function(href){
-			if(href.indexOf('wp-login.php')> -1 || href.indexOf(pjaxHomeUrl) != 0 || href.indexOf('wp-content/') > -1 || href.indexOf('wp-admin/') > -1|| href.indexOf('/lab/') > -1){
+			if(href.indexOf('feed')> -1 ||href.indexOf('wp-login.php')> -1 || href.indexOf(pjaxHomeUrl) != 0 || href.indexOf('wp-content/') > -1 || href.indexOf('wp-admin/') > -1|| href.indexOf('/lab/') > -1){
 				return true;
 			}
 		}
 	})
 	//remove current href cache when a comment added.
 	function removeStorageCache(){
-		if(S.one('#commentform').length){
+		if(S.one('#commentform')&& S.one('#commentform').length){
 			S.Event.on('#commentform', 'submit',function(){
 				var href = location.href.replace(/\/comment\-page.*/, '');
 				S.pjax.util.removeCache(href);

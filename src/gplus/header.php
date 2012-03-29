@@ -49,9 +49,13 @@ ob_implicit_flush(1);
 			</li></ul>
 		<?php wp_nav_menu( array( 'container' => 'none', 'theme_location' => 'primary' ) ); ?>
 		</nav>
+
 		<div class="search r">
 			<?php get_search_form(); ?>
 		</div>
+		<a href="<?php echo home_url();?>/feed" title="rss" class="rss r">
+			<img src="<?php echo home_url();?>/wp-content/themes/gplus/rss.png">
+		</a>
 	</div>
 </header>
 <?php if ($options['header_not_fixed'] || gplus_is_ie6()) :?>

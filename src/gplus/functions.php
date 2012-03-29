@@ -98,6 +98,12 @@ $gplus_items = array (
 		'type' => 'checkbox'
 	),
 	array(
+		'id' => 'use_opti_syntaxhighlighter',
+		'name' => __('use optimize syntaxhighlighter', 'gplus'),
+		'desc' => __('use optimize syntaxhighlighter.support CSS, Javascript, Java, Php, Python, Sql, Xml, Html. enable this option muse be disabled wp-syntaxhighlighter plugin', 'gplus'),
+		'type' => 'checkbox'
+	),
+	array(
 		'id' => 'use_vender_comment',
 		'name' => __('use vender comment', 'gplus'),
 		'desc' => __('use vender comment replace default comment, such as youyan', 'gplus'),
@@ -107,6 +113,12 @@ $gplus_items = array (
 		'id' => 'js_framework',
 		'name' => __('js framework', 'gplus'),
 		'desc' => __('js framework, jquery or qwrap or kissy', 'gplus'),
+		'type' => 'radio'
+	),
+	array(
+		'id' => 'show_fx',
+		'name' => __('show fx?', 'gplus'),
+		'desc' => __('animate for show content, only in jquery ', 'gplus'),
 		'type' => 'radio'
 	),
 	array(
@@ -128,12 +140,6 @@ $gplus_items = array (
 		'type' => 'checkbox'
 	),
 	/*array(
-		'id' => 'show_fx',
-		'name' => __('show fx?', 'gplus'),
-		'desc' => __('animate for show content ', 'gplus'),
-		'type' => 'radio'
-	),*/
-	/*array(
 		'id' => 'use_manifest',
 		'name' => __('use manifest', 'gplus'),
 		'desc' => __('use manifest', 'gplus'),
@@ -151,7 +157,7 @@ $gplus_items = array (
 		'name' => __('callback function', 'gplus'),
 		'desc' => __('callback function. such as SyntaxHighlighter.highlight()', 'gplus'),
 		'type' => 'textarea',
-		'default_value' => "SyntaxHighlighter.highlight()"
+		'default_value' => ""
 	),
 	array(
 		'id' => 'tongji_js_value',

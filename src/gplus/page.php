@@ -4,16 +4,13 @@
 
 
 	<?php the_post(); ?>
-	<section class="post-page"><!-- post div -->
+	<section class="post-page">
 		<h2 class="title"><?php the_title() ?></h2>
 		<div class="entry">
 			<?php the_content(); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page_link"><strong>' . __( 'Pages:' , 'gplus') . '</strong>' , 'after' => '</div>' ) ); ?>
-		</div><!-- END entry -->
-	</section><!-- END post -->
-
-	
-	
+		</div>
+	</section>
 <?php if (!gplus_is_pjax()) {?>
 </div>
 <?php get_sidebar() ?>
