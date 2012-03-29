@@ -46,6 +46,9 @@ echo $content;
 if(function_exists('wp_page_numbers')) {
 	wp_page_numbers();
 }
+elseif(function_exists('wp_paginate')) {
+	wp_paginate();
+}
 elseif(function_exists('wp_pagenavi')) {
 	wp_pagenavi();
 } else {

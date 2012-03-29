@@ -35,7 +35,7 @@ function gplus_comment($comment, $args, $depth) {
 	<?php if ($comment->comment_approved == '0') : ?>
 	<em class="approved"><?php _e('Your comment is awaiting moderation.', 'gplus') ?></em>
 	<?php endif; ?>
-	<p id="commentText<?php comment_ID();?>"><?php echo get_comment_text(); ?></p>
+	<p id="commentText<?php comment_ID();?>"><?php echo nl2br(get_comment_text()); ?></p>
 	<?php 
 		if ($GLOBALS['comments_li_class'] === 'odd'){
 			$GLOBALS['comments_li_class'] = 'even';

@@ -367,6 +367,7 @@ h3.related_post_title{
 	padding:5px 10px;
 }
 .navigation{
+	margin-top:20px;
 	line-height:32px;
 }
 .navigation a{
@@ -385,7 +386,7 @@ summary p, .detail p{
 .alignleft{float:left;}
 .center {
 	text-align: center;
-	}
+}
 
 .hidden {
 	display: none;
