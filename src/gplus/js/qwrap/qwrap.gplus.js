@@ -14,13 +14,13 @@
 			endPjaxTimer = 0;
 		}
 		W('.loading').hide();
-		li.removeClass('current_page_item');
+		li.removeClass('current-menu-item');
 		li.forEach(function(el){
 			var href = W('a', el).attr('href'), h;
 			href = QW.pjax.util.getRealUrl(href);
 			h = QW.pjax.util.getRealUrl(location.href);
 			if(href == h || (href+'/') == h || href == (h+'/')){
-				W(el).addClass('current_page_item');
+				W(el).addClass('current-menu-item');
 				return false;
 			}
 		});

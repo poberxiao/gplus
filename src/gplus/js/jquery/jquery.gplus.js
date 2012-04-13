@@ -60,13 +60,13 @@ $(function(){
 			endPjaxTimer = 0;
 		}
 		$('.loading').hide();
-		li.removeClass('current_page_item');
+		li.removeClass('current-menu-item');
 		li.each(function(){
 			var href = $(this).find('a').attr('href'), h;
 			href = $.pjax.util.getRealUrl(href);
 			h = $.pjax.util.getRealUrl(location.href);
 			if(href == h || (href+'/') == h || href == (h+'/')){
-				$(this).addClass('current_page_item');
+				$(this).addClass('current-menu-item');
 				return false;
 			}
 		});
@@ -74,6 +74,10 @@ $(function(){
 		typeof pjaxCallback != 'undefined' && pjaxCallback && pjaxCallback();
 
 		removeStorageCache();
+
+		if(!location.hash){
+			 $("html, body").animate({ scrollTop: 0 }, 300);
+		}
 	});
 
 	$.pjax({

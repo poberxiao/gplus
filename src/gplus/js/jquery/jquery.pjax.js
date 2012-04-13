@@ -227,7 +227,8 @@
 					}), document.title);
 				}
 			} else {
-				window.scrollTo(0, 0);
+				//window.scrollTo(0, 0);
+				//$('body').scrollTop();
 			}
 			fn && fn.call(this, data, isCached);
 		}, isCached);

@@ -16,13 +16,13 @@ KISSY.use("dom,sizzle", function(S,DOM){
 			endPjaxTimer = 0;
 		}
 		S.one('.loading').hide();
-		li.removeClass('current_page_item');
+		li.removeClass('current-menu-item');
 		li.each(function(el){
 			var href = S.all('a', el).attr('href'), h;
 			href = S.pjax.util.getRealUrl(href);
 			h = S.pjax.util.getRealUrl(location.href);
 			if(href == h || (href+'/') == h || href == (h+'/')){
-				S.one(el).addClass('current_page_item');
+				S.one(el).addClass('current-menu-item');
 				return false;
 			}
 		});

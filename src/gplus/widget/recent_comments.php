@@ -30,7 +30,7 @@ class Gplus_Recent_Comments_Widget extends WP_Widget{
         else if ( $number > 30 )
             $number = 30;
        	 if ( !$comments = wp_cache_get( 'gplus_recent_comments', 'widget' ) ) {
-       	 		$request = "SELECT ID, comment_ID, comment_content, comment_author FROM $wpdb->posts, $wpdb->comments WHERE $wpdb->posts.ID=$wpdb->comments.comment_post_ID AND post_status = 'publish'";
+       	 		$request = "SELECT ID, comment_ID, comment_content, comment_author,post_title FROM $wpdb->posts, $wpdb->comments WHERE $wpdb->posts.ID=$wpdb->comments.comment_post_ID AND post_status = 'publish'";
 				$request .= " AND comment_approved = '1'  and comment_type not in ('pingback','trackback') ORDER BY $wpdb->comments.comment_date DESC LIMIT $number";
             $comments = $wpdb->get_results($request);
             wp_cache_add( 'gplus_recent_comments', $comments, 'widget' );
@@ -49,8 +49,10 @@ class Gplus_Recent_Comments_Widget extends WP_Widget{
             //comment author
 			$comment_author = stripslashes($comment->comment_author);
 
+			$post_title = str_replace('"', '&quot;', $comment->post_title);
+
 			$permalink = get_permalink($comment->ID) . '#comment-' . $comment->comment_ID;
-			echo ' <a href="'.$permalink.'">' . $comment_author . '</a>: ' . $content;
+			echo ' <a href="'.$permalink.'" title="'. $post_title .'">' . $comment_author . '</a>: ' . $content;
 			echo '</li>';
 		}
         echo '</ul>';

@@ -60,7 +60,7 @@ nav li.first{
 	-webkit-border-radius:3px 0 0 3px;
 	-moz-border-radius:3px 0 0 3px;
 }
-nav li.current_page_item{
+nav li.current-menu-item{
 	background-image:-webkit-gradient(linear,left top,left bottom,from(#EEE),to(#E0E0E0));
 	background-image:   -moz-linear-gradient(top, #EEE, #E0E0E0); /* FF3.6 */
 	-webkit-box-shadow:inset 0 1px 5px #CCC;
@@ -68,7 +68,7 @@ nav li.current_page_item{
 	z-index:2;
 	position:relative;
 }
-nav li.current_page_item a{
+nav li.current-menu-item a{
 	color:#DB4A37;
 }
 nav li ul.children{
