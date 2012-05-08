@@ -6,7 +6,7 @@ class Gplus_Recent_Comments_Widget extends WP_Widget{
 	public function __construct(){
 		$widget_ops = array('description' => 'Recent Comments');
         $control_ops = array('width' => "auto", 'height' => 300);
-        parent::WP_Widget(false, $name = 'Recent Comments',$widget_ops,$control_ops); 
+        parent::__construct(false, $name = 'Recent Comments',$widget_ops,$control_ops); 
 	}
 	public function form($instance){
 		$title = esc_attr($instance['title']);

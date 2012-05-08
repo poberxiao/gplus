@@ -85,6 +85,7 @@ nav li a:hover{
 #searchform .si{
 	padding:0 5px;
 	height:28px;
+	line-height:28px;
 	border:1px solid silver;
 	width:200px;
 	-webkit-border-radius:3px;
@@ -126,7 +127,8 @@ article{
 }
 article.detail{
 	border-left:0;
-	padding-left:70px;
+	padding-left:0;
+	padding-bottom: 20px;
 }
 article.detail ul{
 	list-style-type:disc;
@@ -163,6 +165,29 @@ article .date .y{
 	-webkit-border-radius:0 0 5px 5px;
 	-moz-border-radius:0 0 5px 5px;
 }
+.red{
+	color: red;
+}
+input.email, input.url, input.author{
+	border:1px solid #ccc;
+	padding:3px 5px;
+	height:20px;
+	line-height:20px;
+	-webkit-border-radius:2px;
+}
+input.email, input.url{
+	ime-mode:disabled;
+}
+textarea.comment{
+	border:1px solid #ccc;
+	line-height:20px;
+	padding:3px 5px;
+	-webkit-border-radius:2px;
+	overflow: auto;
+}
+#submit{
+	padding:2px 5px;
+}
 h2.title{
 	font-size:30px;
 	line-height:44px;
@@ -196,7 +221,17 @@ article.detail img{
 }
 
 
-
+.linkcat{
+	list-style-type:none
+}
+.post-page .linkcat li{
+	list-style-type:circle;
+	margin-left:20px;
+}
+.archive .list li{
+	list-style-type:circle;
+	margin-left:20px;
+}
 
 #content{float:left;width:700px;padding:0;position:relative;overflow:hidden;
 }
@@ -320,21 +355,25 @@ blockquote{
 h2.comments-title{
 	height:44px;
 	padding-right:10px;
-	margin-top:20px;
+	border-right:1px solid #efefef;
 }
 .comments-list {
-	padding-bottom:30px;
+	padding: 20px 10px 30px 0;
+	border-right:1px solid #efefef;
 }
 .comments-list li{
 	display:block;
 	position:relative;
-	padding-left:65px;
-	margin-top:30px;
+	padding:15px 0 15px 65px;
 	min-height:48px;
+	border-bottom:1px dashed #efefef;
+}
+.comments-list .children li{
+	border-bottom:0;
 }
 .comments-list li a.portrait{
 	position:absolute;
-	top:0;
+	top:15px;
 	left:0;
 }
 a.portrait img{
@@ -342,12 +381,6 @@ a.portrait img{
 	height:48px;
 	-webkit-border-radius:3px;
 	-moz-border-radius:3px;
-	-webkit-transition:all .6s ease-out;
-	-moz-transition:all .6s ease-out;
-}
-a.portrait img:hover{
-	width:60px;
-	height:60px;
 }
 .img404{
 	-webkit-border-radius:5px;
@@ -367,7 +400,6 @@ h3.related_post_title{
 	padding:5px 10px;
 }
 .navigation{
-	margin-top:20px;
 	line-height:32px;
 }
 .navigation a{

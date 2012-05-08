@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-28 16:56+0800\n"
-"PO-Revision-Date: 2012-03-28 16:57+0800\n"
+"POT-Creation-Date: 2012-05-08 11:57+0800\n"
+"PO-Revision-Date: 2012-05-08 11:57+0800\n"
 "Last-Translator: welefen <welefen@gmail.com>\n"
 "Language-Team: zwwooooo <http://zww.me/>\n"
 "MIME-Version: 1.0\n"
@@ -216,101 +216,51 @@ msgstr "设置已保存"
 msgid "Save Options"
 msgstr "保存设置"
 
-#: archive.php:9
-msgid "Daily Archives:"
-msgstr "日存档:"
+#: functions.php:374
+msgid "View this post"
+msgstr "查看该文章"
 
-#: archive.php:11
-msgid "Monthly Archives:"
-msgstr "月度存档:"
+#: functions.php:385
+msgid "Sorry, no posts matched your criteria."
+msgstr "没有任何文章"
 
-#: archive.php:13
-msgid "Yearly Archives:"
-msgstr "年度存档:"
+#: single.php:10
+msgid "date"
+msgstr "日期"
 
-#: archive.php:15
-msgid "Category Archives:"
-msgstr "分类存档:"
-
-#: archive.php:17
-msgid "Tag Archives:"
-msgstr "标签存档:"
-
-#: archive.php:19
-msgid "Blog Archives"
-msgstr "博客存档"
-
-#: archive.php:31
-#: single.php:11
+#: single.php:12
 #, php-format
 msgid "Author：%s"
 msgstr "作者: %s"
 
-#: archive.php:33
-#: single.php:13
+#: single.php:14
 #, php-format
 msgid "IN：%s"
 msgstr "分类: %s"
 
-#: archive.php:34
-#: single.php:14
+#: single.php:15
 #: index.php:26
 msgid "Tags:"
 msgstr "标签: "
 
-#: archive.php:35
-#: single.php:15
+#: single.php:16
 msgid "Comments："
 msgstr "评论: "
 
-#: archive.php:38
-#: single.php:18
+#: single.php:19
 #: index.php:30
 msgid "Read more &raquo;"
 msgstr "继续阅读 &raquo; "
 
-#: archive.php:40
-#: single.php:20
+#: single.php:21
 #: index.php:32
 msgid "This is a sticky post!"
 msgstr "置顶文章！"
 
-#: archive.php:40
-#: single.php:20
+#: single.php:21
 #: index.php:32
 msgid "continue reading?"
 msgstr "继续阅读？"
-
-#: archive.php:52
-#: 404.php:7
-msgid "Error 404 - Not Found"
-msgstr "错误 404 - 没有找到"
-
-#: archive.php:55
-#: 404.php:8
-msgid "Sorry, but you are looking for something that isn&#8217;t here."
-msgstr "对不起，没有找到您要的东东，或许下面的内容你感兴趣。"
-
-#: archive.php:56
-#: sidebar.php:5
-#: 404.php:10
-msgid "Random Posts"
-msgstr "随机文章"
-
-#: archive.php:65
-#: 404.php:19
-msgid "Tag Cloud"
-msgstr "标签云"
-
-#: archive.php:81
-#: index.php:56
-msgid "&laquo; Previous page"
-msgstr "&laquo; 上一页"
-
-#: archive.php:81
-#: index.php:56
-msgid "Next page &raquo;"
-msgstr "下一页 &raquo;"
 
 #: header.php:48
 msgid "Home"
@@ -319,6 +269,11 @@ msgstr "首页"
 #: page.php:11
 msgid "Pages:"
 msgstr "分页:"
+
+#: sidebar.php:5
+#: 404.php:10
+msgid "Random Posts"
+msgstr "随机文章"
 
 #: sidebar.php:16
 msgid "Search by Tags!"
@@ -354,9 +309,47 @@ msgstr "分类: %s"
 msgid "Comments: "
 msgstr "评论: "
 
+#: index.php:59
+msgid "&laquo; Previous page"
+msgstr "&laquo; 上一页"
+
+#: index.php:59
+msgid "Next page &raquo;"
+msgstr "下一页 &raquo;"
+
+#: 404.php:7
+msgid "Error 404 - Not Found"
+msgstr "错误 404 - 没有找到"
+
+#: 404.php:8
+msgid "Sorry, but you are looking for something that isn&#8217;t here."
+msgstr "对不起，没有找到您要的东东，或许下面的内容你感兴趣。"
+
+#: 404.php:19
+msgid "Tag Cloud"
+msgstr "标签云"
+
 #: widget/recent_comments.php:25
 msgid "Recent Comments"
 msgstr "最新评论"
+
+#~ msgid "Daily Archives:"
+#~ msgstr "日存档:"
+
+#~ msgid "Monthly Archives:"
+#~ msgstr "月度存档:"
+
+#~ msgid "Yearly Archives:"
+#~ msgstr "年度存档:"
+
+#~ msgid "Category Archives:"
+#~ msgstr "分类存档:"
+
+#~ msgid "Tag Archives:"
+#~ msgstr "标签存档:"
+
+#~ msgid "Blog Archives"
+#~ msgstr "博客存档"
 
 #~ msgid "use manifest"
 #~ msgstr "使用manifest加速"

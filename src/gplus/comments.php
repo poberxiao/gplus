@@ -58,16 +58,16 @@ if($options['use_vender_comment']){
 	
 	$fields =  array(
 			'author' => '<p class="comment-item">' .
-			'<input class="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />'. ' <label for="author">' . __( 'NAME', 'gplus' ) . '</label></p>',
+			'<input class="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />'. ' <label for="author">' . __( 'NAME', 'gplus' ) . ' <span class="red">*</span> </label></p>',
 			'email'  => '<p class="comment-item">' .
-			'<input class="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" /> <label for="email">' . __( 'EMAIL', 'gplus' ) . '</label></p>',
+			'<input class="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" /> <label for="email">' . __( 'EMAIL', 'gplus' ) . ' <span class="red">*</span> </label></p>',
 			'url'    => '<p class="comment-item">' .
 			'<input class="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> <label for="url">' . __( 'Website URL', 'gplus' ) . '</label></p>',
 			);
 	$args = array(
 			'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
 			'comment_notes_before' => '',
-			'comment_field'        => $smilies.'<p class="comment-form-comment"><textarea aria-required="true" rows="8" style="width:400px" cols="90" name="comment" id="comment" onkeydown="if(event.ctrlKey){if(event.keyCode==13){document.getElementById(\'submit\').click();return false}};"></textarea></p>',
+			'comment_field'        => $smilies.'<p class="comment-form-comment"><textarea aria-required="true" rows="8" style="width:400px" cols="90" name="comment" class="comment" id="comment" onkeydown="if(event.ctrlKey){if(event.keyCode==13){document.getElementById(\'submit\').click();return false}};"></textarea></p>',
 			'comment_notes_after'  => $comment_notes,
 			'title_reply'          => __( 'Leave a Comment', 'gplus'),
 			'title_reply_to'       => __('Reply to %s &not;<br />', 'gplus'), 

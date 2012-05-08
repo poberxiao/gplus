@@ -394,7 +394,6 @@ var SyntaxHighlighter = function() {
 		d = null;
 		if (c == null) {
 			c = {};
-			console.log(e.brushes);
 			for (var h in e.brushes) {
 				var g = e.brushes[h];
 				d = g.aliases;
@@ -663,7 +662,6 @@ var SyntaxHighlighter = function() {
 				k = b.params,
 				j = k.brush,
 				l;
-				console.log(k)
 				if (j != null) {
 					if (k["html-script"] == "true" || e.defaults["html-script"] == true) {
 						d = new e.HtmlScript(j);
