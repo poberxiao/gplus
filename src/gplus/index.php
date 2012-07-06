@@ -27,7 +27,7 @@ echo $content;
 		<?php _e('Comments: ', 'gplus') . comments_popup_link('0', '1', '%', '', 'comments closed'); ?>
 		</p>
 		<summary class="clearfix">
-			<?php  the_content(__('Read more &raquo;', 'gplus'));  ?>
+			<?php if ( $options['excerpt_check']=='true' ) { the_excerpt(__('Read more &raquo;', 'gplus')); } else { the_content(__('Read more &raquo;', 'gplus')); } ?>
 		<?php if(is_sticky()) { ?>
 			<p><?php _e('This is a sticky post!', 'gplus'); ?> <a href="<?php the_permalink() ?>" class="more-links"><?php _e('continue reading?', 'gplus'); ?></a></p>
 		<?php } ?>

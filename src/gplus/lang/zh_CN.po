@@ -86,21 +86,29 @@ msgstr "您的评论正在等待审核。"
 msgid "Primary Navigation"
 msgstr "主要导航"
 
-#: functions.php:72
+#: functions.php:66
 msgid "logo image URL"
 msgstr "logo图片地址"
 
-#: functions.php:73
+#: functions.php:67
 msgid "logo image url.(with http://), height is 28px, max width is 140px"
 msgstr "logo图片地址，高度为28px，最大宽度为140px"
 
-#: functions.php:78
+#: functions.php:72
 msgid "404 image URL"
 msgstr "404图片地址"
 
-#: functions.php:79
+#: functions.php:73
 msgid "404 page image URL. max width is 700px"
 msgstr "404图片地址，最大宽度为700px"
+
+#: functions.php:78
+msgid "rss URL"
+msgstr "订阅地址"
+
+#: functions.php:79
+msgid "Custom rss URL"
+msgstr "自定义订阅地址"
 
 #: functions.php:84
 msgid "header not fixed"
@@ -182,13 +190,29 @@ msgstr "不使用本地存储？"
 msgid "use storage for cache content for next request"
 msgstr "使用本地存储可以在下次访问的时候直接使用缓存"
 
+#: functions.php:144
+msgid "Home Summary?"
+msgstr "首页摘要"
+
+#: functions.php:145
+msgid "check this then home page will be display post Summary"
+msgstr "勾选此项则在首页显示日志摘要"
+
+#: functions.php:150
+msgid "Summary words"
+msgstr "摘要字数"
+
+#: functions.php:151
+msgid "if you check the Home Summary that you can change then Summary words"
+msgstr "如果你勾选了首页摘要，你可以在这里设置摘要字数"
+
 #: functions.php:157
 msgid "callback function"
 msgstr "回调函数"
 
 #: functions.php:158
 msgid "callback function. such as SyntaxHighlighter.highlight()"
-msgstr "使用了ajax后的回调函数，如： 执行语法高亮"
+msgstr "使用了ajax后的回调函数，如： 执行语法高亮 SyntaxHighlighter.highlight()"
 
 #: functions.php:164
 msgid "analytic js content"
