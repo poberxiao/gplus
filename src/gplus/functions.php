@@ -26,35 +26,29 @@ function gplus_comment($comment, $args, $depth) {
    $options = gplus_get_options();
 ?>
 <li class="clearfix <?php echo $GLOBALS['comments_li_class'];?>">
-	<a class="portrait" name="comment-<?php comment_ID();?>"><?php echo get_avatar($comment,$size='48',$default='' ); ?></a>
-	<span style="display:block;"><?php comment_author_link() ?>&nbsp;&nbsp;<?php printf(__('%1$s at %2$s', 'gplus'), get_comment_date(),  get_comment_time()) ?></a>
-		<?php if( $options['show_reply']):?>
+	<a class=portrait name="comment-<?php comment_ID();?>"><?php echo get_avatar($comment,$size='48',$default='' ); ?></a><span style="display:block;"><?php comment_author_link() ?>&nbsp;&nbsp;
+	<?php printf(__('%1$s at %2$s', 'gplus'), get_comment_date(),  get_comment_time()) ?></a>
+	<?php if( $options['show_reply']):?>
 		<a onclick="replyComment(<?php comment_ID();?>, '<?php echo get_comment_author();?>')" href="#commentForm">&nbsp;<?php echo __("Reply", "gplus"); ?></a>
-		<?php endif;?>
-		<?php edit_comment_link(__('[Edit]'),' ','') ?></span>
-	<?php if ($comment->comment_approved == '0') : ?>
-	<em class="approved"><?php _e('Your comment is awaiting moderation.', 'gplus') ?></em>
-	<?php endif; ?>
-	<p id="commentText<?php comment_ID();?>"><?php echo nl2br(get_comment_text()); ?></p>
-	<?php 
+	<?php endif;?>
+	<?php edit_comment_link(__('[Edit]'),' ','') ?></span><?php if ($comment->comment_approved == '0') : ?>
+	<em class=approved>
+	<?php _e('Your comment is awaiting moderation.', 'gplus') ?></em><?php endif; ?><p id="commentText<?php comment_ID();?>"><?php echo nl2br(get_comment_text()); ?></p><?php 
 		if ($GLOBALS['comments_li_class'] === 'odd'){
 			$GLOBALS['comments_li_class'] = 'even';
 		}else{
 			$GLOBALS['comments_li_class'] = 'odd';
 		}
-	?>
-</li>
-<?php }
+	?><?php }
 
 /* wp_list_comments()->pings callback */
 function gplus_custom_pings($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;
     if('pingback' == get_comment_type()) $pingtype = 'Pingback';
     else $pingtype = 'Trackback';
-?>
-    <li>
-        <?php comment_author_link(); ?> - <?php echo $pingtype; ?> on <?php echo mysql2date('Y/m/d/ H:i', $comment->comment_date); ?>
-<?php }
+?> <li> <?php comment_author_link(); ?> - <?php echo $pingtype; ?> on <?php echo mysql2date('Y/m/d/ H:i', $comment->comment_date); ?><?php }
+
+
 
 
 
@@ -77,6 +71,12 @@ $gplus_items = array (
 		'id' => '404img_url',
 		'name' => __('404 image URL', 'gplus'),
 		'desc' => __('404 page image URL. max width is 700px', 'gplus'),
+		'type' => 'text'
+	),
+	array(
+		'id' => 'rss_url',
+		'name' => __('rss URL', 'gplus'),
+		'desc' => __('Custom rss URL', 'gplus'),
 		'type' => 'text'
 	),
 	array(
@@ -139,19 +139,19 @@ $gplus_items = array (
 		'desc' => __('use storage for cache content for next request', 'gplus'),
 		'type' => 'checkbox'
 	),
-	/*array(
-		'id' => 'use_manifest',
-		'name' => __('use manifest', 'gplus'),
-		'desc' => __('use manifest', 'gplus'),
+	array(
+		'id' => 'excerpt_check',
+		'name' => __('Home Summary?', 'gplus'),
+		'desc' => __('check this then home page will be display post Summary', 'gplus'),
 		'type' => 'checkbox',
 	),
 	array(
-		'id' => 'manifest_value',
-		'name' => __('manifest value', 'gplus'),
-		'desc' => __('just in chrome & firefox', 'gplus'),
-		'type' => 'textarea',
-		'default_value' => "CACHE MANIFEST\n\nCACHE:\nwp-content/themes/gplus/js/jquery.js\n\nNETWORK:\nwp-admin/\n"
-	),*/
+		'id' => 'excerpt_words',
+		'name' => __('Summary words', 'gplus'),
+		'desc' => __('if you check the Home Summary that you can change then Summary words', 'gplus'),
+		'type' => 'text',
+		'default_value' => "200"
+	),
 	array(
 		'id' => 'callback_function',
 		'name' => __('callback function', 'gplus'),
@@ -198,50 +198,7 @@ function gplus_theme_options_do_page() {
 	}
 	if ( ! isset( $_REQUEST['updated'] ) )
 		$_REQUEST['updated'] = false;
-?>
-<div class="wrap">
-	<?php screen_icon(); echo "<h2>" . sprintf( __( '%1$s Theme Options' , 'gplus'), get_current_theme() )	 . "</h2>"; ?>
-	<?php if ( false !== $_REQUEST['updated'] ) : ?>
-	<div class="updated fade"><p><strong><?php _e( 'Options saved' , 'gplus'); ?></strong></p></div>
-	<?php endif; ?>
-	<form method="post" action="options.php">
-		<?php settings_fields( 'gplus_options' ); ?>
-		<?php $options = get_option( 'gplus_options' ); ?>
-		<table class="form-table">
-		<?php foreach ($gplus_items as $item) { ?>
-			<tr valign="top" style="margin:0 10px;border-bottom:1px solid #ddd;">
-				<th scope="row"><?php echo $item['name']; ?></th>
-				<td>
-					<?php if ($item['type'] == 'radio'):?>
-					<?php if ($item['id'] == 'js_framework'):?>
-					<input  name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" value="" <?php if (!$options[$item['id']]):?>checked<?php endif;?>/> jquery
-					&nbsp;&nbsp;<input  name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" value="qwrap" <?php if ($options[$item['id']] == 'qwrap'):?>checked<?php endif;?>/> qwrap
-					&nbsp;&nbsp;<input  name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" value="kissy" <?php if ($options[$item['id']] == 'kissy'):?>checked<?php endif;?>/> kissy
-		
-					<?php else:?>
-					<input  name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" value="" <?php if (!$options[$item['id']]):?>checked<?php endif;?>/> none
-					&nbsp;&nbsp;<input  name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" value="fade" <?php if ($options[$item['id']] == 'fade'):?>checked<?php endif;?>/> fade
-					<?php endif;?>
-					<?php elseif ($item['type'] == 'checkbox'):?>
-					<input  name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" value="true" <?php if ($options[$item['id']]):?>checked<?php endif;?> size="80" />
-					<?php elseif ($item['type'] == 'textarea'):?>
-					<textarea style="width:500px"  name="<?php echo 'gplus_options['.$item['id'].']'; ?>" rows="8" cols="50"><?php if ($options[$item['id']]){ echo gplus_stripvalue($options[$item['id']]);} else {echo gplus_stripvalue($item['default_value']);} ; ?></textarea>
-					
-					<?php else:?>
-					<input style="width:500px" name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" <?php if ( $options[$item['id']] != "") {?>value="<?php echo $options[$item['id']]; ?>"<?php }else{?>value=""<?php } ?> size="80" />
-					<?php endif;?>
-					<br/>
-					<label class="description" for="<?php echo 'gplus_options['.$item['id'].']'; ?>"><?php echo $item['desc']; ?></label>
-				</td>
-			</tr>
-		<?php } ?>
-		</table>
-		<p class="submit">
-			<input type="submit" class="button-primary" value="<?php _e( 'Save Options' , 'gplus'); ?>" />
-		</p>
-	</form>
-</div>
-<?php
+?><div class=wrap><?php screen_icon(); echo "<h2>" . sprintf( __( '%1$s Theme Options' , 'gplus'), get_current_theme() )	 . "</h2>"; ?><?php if ( false !== $_REQUEST['updated'] ) : ?><div class="updated fade"><p><strong><?php _e( 'Options saved' , 'gplus'); ?></strong></p></div><?php endif; ?><form method=post action=options.php><?php settings_fields( 'gplus_options' ); ?><?php $options = get_option( 'gplus_options' ); ?><table class=form-table><?php foreach ($gplus_items as $item) { ?><tr valign=top style="margin:0 10px;border-bottom:1px solid #ddd;"><th scope=row><?php echo $item['name']; ?></th><td><?php if ($item['type'] == 'radio'):?><?php if ($item['id'] == 'js_framework'):?><input name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" value="" <?php if (!$options[$item['id']]):?> checked <?php endif;?>> jquery&nbsp;&nbsp;<input name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" value=qwrap <?php if ($options[$item['id']] == 'qwrap'):?> checked <?php endif;?>> qwrap&nbsp;&nbsp;<input name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" value=kissy <?php if ($options[$item['id']] == 'kissy'):?> checked <?php endif;?>> kissy<?php else:?><input name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" value="" <?php if (!$options[$item['id']]):?> checked <?php endif;?>> none&nbsp;&nbsp;<input name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" value=fade <?php if ($options[$item['id']] == 'fade'):?> checked <?php endif;?>> fade<?php endif;?><?php elseif ($item['type'] == 'checkbox'):?><input name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" value=true <?php if ($options[$item['id']]):?> checked <?php endif;?> size=80><?php elseif ($item['type'] == 'textarea'):?><textarea style="width:500px"  name="<?php echo 'gplus_options['.$item['id'].']'; ?>" rows="8" cols="50"><?php if ($options[$item['id']]){ echo gplus_stripvalue($options[$item['id']]);} else {echo gplus_stripvalue($item['default_value']);} ; ?></textarea><?php else:?><input style=width:500px name="<?php echo 'gplus_options['.$item['id'].']'; ?>" type="<?php echo $item['type']?>" <?php if ( $options[$item['id']] != "") {?> value="<?php echo $options[$item['id']]; ?>" <?php }else{?> value="" <?php } ?> size=80><?php endif;?><br><label class=description for="<?php echo 'gplus_options['.$item['id'].']'; ?>"><?php echo $item['desc']; ?></label><?php } ?></table><p class=submit><input type=submit class=button-primary value="<?php _e( 'Save Options' , 'gplus'); ?>"></p></form></div><?php
 }
 
 function gplus_options_validate($input) {
@@ -273,7 +230,7 @@ function gplus_is_ie6(){
 	return !!(strpos($_SERVER["HTTP_USER_AGENT"], "MSIE 6") !== false);
 }
 function gplus_version(){
-	return '__CURRENT__VERSION__';
+	return '1.5';
 }
 /**
  * 
@@ -341,9 +298,13 @@ function gplus_stripvalue($value){
 	return $value;
 }
 
+//////// custom excerpt
+function gplus_excerpt_length( $length ) {
+	$options = gplus_get_options();
+	if ( $options['excerpt_words'] ) { return $options['excerpt_words']; } else { return 200;}
+}
+add_filter( 'excerpt_length', 'gplus_excerpt_length' );
 
-
- 
 function gplus_archive() {
 	global $wpdb, $month;
 	$lastpost = $wpdb->get_var ( "SELECT ID FROM $wpdb->posts WHERE post_date <'" . current_time ( 'mysql' ) . "' AND post_status='publish' AND post_type='post' AND post_password='' ORDER BY post_date DESC LIMIT 1" );

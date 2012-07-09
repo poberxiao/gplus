@@ -2,7 +2,7 @@
 Theme Name:gplus
 Theme URI:http://www.welefen.com/tag/gplus
 Description: like google plus ui theme, support change location url without refresh(pushstate+ajax=pjax), support keybord event(J\K), support localstorage & manifest to cache static files. style.css and other static files is compressed to reduce file size.
-Version:__CURRENT__VERSION__
+Version:1.5
 Author:welefen
 Author URI:http://www.welefen.com/
 Tags:custom-menu, threaded-comments, two-columns, fixed-width, right-sidebar, theme-options
@@ -16,7 +16,7 @@ html{color:#000;background:#fff;overflow-y:scoll}
 button,input,select,textarea{font:12px/1.5 arial}
 h1,h2,h3,h4,h5,h6{font-size:100%}
 address,cite,dfn,em,var{font-style:normal}
-code,kbd,pre,samp{font-family:courier new,courier,monospace}
+code,kbd,pre,samp{font-family:微软雅黑,PMingLiU,Verdana,Arial,Helvetica,sans-serif}
 small{font-size:12px}
 ul,ol{list-style:none}
 a{text-decoration:none}
@@ -30,7 +30,7 @@ img{-ms-interpolation-mode:bicubic}
 textarea{resize:vertical}
 :focus{outline:0}
 article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block}.clearfix:after{content:'\20';display:block;height:0;clear:both}.clearfix{zoom:1}
-body{background:#fff;color:#333;font:normal 14px/22px "Microsoft YaHei",STHeiti,Georgia,"Times New Roman",Times,serif;}
+body{background:#fff;color:#333;font:normal 14px/22px 微软雅黑,PMingLiU,Verdana,Arial,Helvetica,sans-serif;}
 header{height:45px;padding-top:15px;background:#F1F1F1;border-bottom:1px solid #D2D2D2;position:fixed;top:0;left:0;width:100%;z-index:100;
 -webkit-box-shadow:0px 0px 10px #666;opacity:0.98;z-index:1;overflow:hidden
 }

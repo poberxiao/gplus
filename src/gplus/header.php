@@ -53,7 +53,7 @@ ob_implicit_flush(1);
 		<div class="search r">
 			<?php get_search_form(); ?>
 		</div>
-		<a href="<?php echo home_url();?>/feed" title="rss" class="rss r">
+		<a href="<?php if ($options['rss_url']) { echo $options['rss_url'];} else {echo bloginfo('rss2_url');}?>" title="rss" class="rss r">
 			<img src="<?php echo home_url();?>/wp-content/themes/gplus/rss.png">
 		</a>
 	</div>

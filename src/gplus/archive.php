@@ -32,6 +32,7 @@
 		<?php endif;?>
 		<?php printf(__('IN：%s'), get_the_category_list(', ')); ?>&nbsp;&nbsp;&nbsp;
 		<?php the_tags(__('Tags:') . ' ', ', ', ''); ?> &nbsp;&nbsp;&nbsp;
+		<?php if(function_exists('the_views')) {the_views();echo '&nbsp;&nbsp;&nbsp;';} ?>
 		<?php _e('Comments：', 'gplus') . comments_popup_link('0', '1', '%', '', 'closed'); ?>
 		</p>
 		<summary>
