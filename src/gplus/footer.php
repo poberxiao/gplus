@@ -22,9 +22,9 @@
 
 <?php if ($options['tongji_js_value']):?>
 	<?php if (strpos($options['tongji_js_value'], '</script>') === false):?>
-		<script type="text/javascript"><?php echo gplus_stripvalue($options['tongji_js_value']);?></script>
+		<script type="text/javascript"><?php echo stripslashes($options['tongji_js_value']);?></script>
 	<?php else :?>
-		<?php echo gplus_stripvalue($options['tongji_js_value']);?>
+		<?php echo stripslashes($options['tongji_js_value']);?>
 	<?php endif;?>
 <?php endif;?>
 

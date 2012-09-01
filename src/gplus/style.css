@@ -453,7 +453,7 @@ a.rss img{
 	filter:alpha(opacity=60);
 }
 
-@media screen and (min-width: 1100px) and (max-width: 1800px) {
+@media screen and (min-width: 1100px){
 	body{
 		font-size:15px;
 		line-height:24px;
