@@ -259,7 +259,7 @@ function gplus_is_ie6(){
 	return !!(strpos($_SERVER["HTTP_USER_AGENT"], "MSIE 6") !== false);
 }
 function gplus_version(){
-	return '1.5';
+	return '__CURRENT__VERSION__';
 }
 /**
  * 

@@ -45,8 +45,8 @@
 <?php endif;?>
 
 <?php if($options['use_opti_syntaxhighlighter']):?>
-<link rel="stylesheet" type="text/css" href="<?php echo home_url();?>/wp-content/themes/gplus/css/syntaxhighlighter.css" />
-<script src="<?php echo home_url();?>/wp-content/themes/gplus/js/syntaxhighlighter.js" type="text/javascript" charset="utf-8" async defer></script>
+<link rel="stylesheet" type="text/css" href="<?php echo home_url();?>/wp-content/themes/gplus/css/syntaxhighlighter.css?v=<?php echo gplus_version();?>" />
+<script src="<?php echo home_url();?>/wp-content/themes/gplus/js/syntaxhighlighter.js?v=<?php echo gplus_version();?>" type="text/javascript" charset="utf-8" async defer></script>
 <?php endif;?>
 
 </body>
