@@ -377,3 +377,29 @@ function gplus_archive() {
 	}
 	echo $output;
 }
+
+function get_comment_token(){
+	$options = gplus_get_options();
+	if (isset($options['comment_token'])) {
+		return md5($options['comment_token']);
+	}
+	return md5(date("Y-m-d"));
+}
+
+function check_comment_token($comment = array()){
+	$comment_token = $comment['comment_token'];
+	if (empty($comment_token)) {
+		$comment_token = $_POST['comment_token'];
+		unset($_POST['comment_token']);
+	}
+	if (empty($comment_token)) {
+		exit("comment flag empty");
+	}
+	$flag = get_comment_token();
+	if ($comment_token != $flag) {
+		exit("comment flag error");
+	}
+	return $comment;
+}
+
+add_filter('preprocess_comment', 'check_comment_token');
