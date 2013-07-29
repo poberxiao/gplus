@@ -31,6 +31,6 @@
 11、其他等很多细小特性。
 
 ## 如何安装
-下载gplus目录，上传到wordpress安装目录里的wp-content/themes下，在管理后台启用gplus主题即可。
+下载download里最新的zip包，解压并上传到wordpress安装目录的wp-content/themes下，在管理后台启用gplus主题即可。
 
 
