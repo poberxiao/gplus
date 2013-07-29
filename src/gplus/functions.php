@@ -166,6 +166,12 @@ $gplus_items = array (
 		'type' => 'textarea',
 		'default_value' => ""
 	),
+	array(
+		'id' => 'comment_se_key',
+		'name' => __('Comment Security Key', 'gplus'),
+		'desc' => __('Comment Security Key', 'gplus'),
+		'type' => 'text'
+	),
 );
 add_action( 'admin_init', 'gplus_theme_options_init' );
 add_action( 'admin_menu', 'gplus_theme_options_add_page' );
@@ -377,27 +383,30 @@ function gplus_archive() {
 	}
 	echo $output;
 }
-
-function get_comment_token(){
+function get_comment_se_key(){
 	$options = gplus_get_options();
-	if (isset($options['comment_token'])) {
-		return md5($options['comment_token']);
-	}
-	return md5(date("Y-m-d"));
+	if ($options['comment_se_key']) {
+		return $options['comment_se_key'];
+	};
+	return "welefen_gplus_theme";
+}
+function get_comment_token(){
+	$key = get_comment_se_key();
+	$x = rand(10, 50);
+	$y = rand(10, 50);
+	return array(
+		"text" => $x . '+' . $y,
+		"token" => md5(($x + $y) . $key)
+	);
 }
 
 function check_comment_token($comment = array()){
-	$comment_token = $comment['comment_token'];
-	if (empty($comment_token)) {
-		$comment_token = $_POST['comment_token'];
-		unset($_POST['comment_token']);
-	}
-	if (empty($comment_token)) {
-		exit("comment flag empty");
-	}
-	$flag = get_comment_token();
-	if ($comment_token != $flag) {
-		exit("comment flag error");
+	$comment_token = $_POST['comment_token'];
+	$comment_token_value = $_POST['comment_token_value'];
+	$se_key = get_comment_se_key();
+	$md5 = md5($comment_token_value . $se_key);
+	if ($md5 != $comment_token) {
+		exit("comment token error");
 	}
 	return $comment;
 }

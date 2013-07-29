@@ -55,6 +55,7 @@ if($options['use_vender_comment']){
 	if ( function_exists(cs_print_smilies) ) {cs_print_smilies();}
 	$smilies = ob_get_contents();
 	ob_end_clean();
+	$comment_token = get_comment_token();
 	$fields =  array(
 			'author' => '<p class="comment-item">' .
 			'<input class="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />'. ' <label for="author">' . __( 'NAME', 'gplus' ) . ' <span class="red">*</span> </label></p>',
@@ -63,10 +64,11 @@ if($options['use_vender_comment']){
 			'url'    => '<p class="comment-item">' .
 			'<input class="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> <label for="url">' . __( 'Website URL', 'gplus' ) . '</label></p>',
 			);
+	$comment_field = '<input type="hidden" name="comment_token" value="' . $comment_token['token'] .'"/>'.$smilies.'<p class="comment-form-comment"><textarea aria-required="true" rows="8" style="width:400px" cols="90" name="comment" class="comment" id="comment" onkeydown="if(event.ctrlKey){if(event.keyCode==13){document.getElementById(\'submit\').click();return false}};"></textarea></p>' . '<p><input class="author" style="width:100px" type="text" name="comment_token_value" /> '.$comment_token['text'].' <span class="red">*</span></p>';
 	$args = array(
 			'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
 			'comment_notes_before' => '',
-			'comment_field'        => '<input type="hidden" name="comment_token" value="' . get_comment_token() .'"/>'.$smilies.'<p class="comment-form-comment"><textarea aria-required="true" rows="8" style="width:400px" cols="90" name="comment" class="comment" id="comment" onkeydown="if(event.ctrlKey){if(event.keyCode==13){document.getElementById(\'submit\').click();return false}};"></textarea></p>',
+			'comment_field'        => $comment_field,
 			'comment_notes_after'  => $comment_notes,
 			'title_reply'          => __( 'Leave a Comment', 'gplus'),
 			'title_reply_to'       => __('Reply to %s &not;<br />', 'gplus'), 
